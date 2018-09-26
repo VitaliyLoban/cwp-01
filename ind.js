@@ -40,3 +40,8 @@ fs.mkdir(full_path, function (err) {
   )(dir_path, null);
   if (err) throw err;
 });
+fs.watch(full_path, (eventType, fileNames) => {
+  if (fileNames) {
+      console.log(fileNames.toString()+"Changed");
+  }
+});
